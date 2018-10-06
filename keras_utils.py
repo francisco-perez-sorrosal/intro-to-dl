@@ -72,7 +72,7 @@ def reset_tf_session():
     # reset graph
     K.clear_session()
     # create new session
-    config = tf.ConfigProto()
+    config = tf.ConfigProto(log_device_placement=True)
     config.gpu_options.allow_growth = True
     s = tf.InteractiveSession(config=config)
     K.set_session(s)
